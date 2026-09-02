@@ -1,0 +1,19 @@
+Motion is the change in position of an object with respect to time.
+
+The distance travelled by an object is the total length of the path covered by the object.
+
+Displacement is the shortest distance between the initial and final position of an object.
+
+Speed is the distance travelled by an object per unit time.
+
+Velocity is the displacement of an object per unit time.
+
+Acceleration is the rate of change of velocity with time.
+
+An object is said to be in uniform motion when it covers equal distances in equal intervals of time.
+
+An object is said to be in non-uniform motion when it covers unequal distances in equal intervals of time.
+
+Force is a push or pull acting on an object.
+
+Newton's first law states that an object remains at rest or continues to move with uniform velocity unless acted upon by an external force.
