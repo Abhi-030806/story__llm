@@ -41,6 +41,33 @@ class PhysicsLLM:
             embedding_dim,
             vocab_size
         )
+    def load(self, path):
+
+        parameters = np.load(path)
+
+        self.embedding.weights = parameters["embedding"]
+        self.output_layer.W = parameters["output_W"]
+        self.output_layer.b = parameters["output_b"]
+
+        for i, block in enumerate(self.blocks):
+
+            block.attention.W_Q = parameters[f"block{i}_WQ"]
+            block.attention.W_K = parameters[f"block{i}_WK"]
+            block.attention.W_V = parameters[f"block{i}_WV"]
+            block.attention.W_O = parameters[f"block{i}_WO"]
+
+            block.ffn.W1 = parameters[f"block{i}_W1"]
+            block.ffn.b1 = parameters[f"block{i}_b1"]
+            block.ffn.W2 = parameters[f"block{i}_W2"]
+            block.ffn.b2 = parameters[f"block{i}_b2"]
+
+            block.norm1.gamma = parameters[f"block{i}_gamma1"]
+            block.norm1.beta = parameters[f"block{i}_beta1"]
+
+            block.norm2.gamma = parameters[f"block{i}_gamma2"]
+            block.norm2.beta = parameters[f"block{i}_beta2"]
+
+        print("Model loaded!")
 
     def forward(self, token_ids):
 
